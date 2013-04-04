@@ -1,0 +1,17 @@
+"<%= @page_comment.comment %>"
+<% if @page_comment.user_id.nil? %>
+    by <%= h User.find(@page_comment.user_id).human_name %>
+<% end %>
+
+
+This comment was <%= @status %> on this page:
+<%= page_url(@page_comment.page) %>
+<%= link_to "Page", page_url(@page_comment.page) %>
+
+
+
+Patrolling the campus,
+Scotty Dog
+
+<%= image_tag("http://whiteboard.sv.cmu.edu/images/ScottyDogLandscape.jpg", :class => "bevel", :size => "236x69", :alt => "Picture of Scotty Dog") %>
+
